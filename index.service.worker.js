@@ -4,7 +4,7 @@
 // Incrementing CACHE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
 /** @type {string} */
-const CACHE_VERSION = '1786168562|2512213';
+const CACHE_VERSION = '1786173854|3118411';
 /** @type {string} */
 const CACHE_PREFIX = 'Solid Rock: Refo-sw-cache-';
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;
