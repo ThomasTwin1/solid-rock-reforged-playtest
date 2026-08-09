@@ -4,10 +4,19 @@
 // Incrementing CACHE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
 /** @type {string} */
-const CACHE_VERSION = '1786271939|3645509';
+const CACHE_VERSION = '1786272398|3318904';
 /** @type {string} */
 const CACHE_PREFIX = 'Solid Rock: Refo-sw-cache-';
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;
+// Solid Rock public-update migration.
+// Older playtest builds installed a cache-first worker. Activate this
+// replacement immediately so returning phones receive the tested build.
+self.addEventListener('install', () => {
+	self.skipWaiting();
+});
+self.addEventListener('activate', (event) => {
+	event.waitUntil(self.clients.claim());
+});
 /** @type {string} */
 const OFFLINE_URL = 'index.offline.html';
 /** @type {boolean} */
